@@ -194,12 +194,9 @@ https://docs.google.com/document/d/1FfYx7hgD2HynxiQJVKRtyQ-_O8tIjeHFbgmWBO8o1T8/
 
 # Capturas del Sistema
 
-Agregar capturas de:
-- Login
 - Dashboard PETI
 - Gestión de módulos
 - Exportación PDF/Excel
-- Control de acceso
 - Responsive design
 - Matrices estratégicas
 - Gestión de responsables

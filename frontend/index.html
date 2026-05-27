@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PETI Empresarial</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="toast" class="toast" aria-live="polite"></div>
+
+    <section id="loginView" class="login-shell">
+      <div class="login-panel">
+        <p class="eyebrow">Plataforma PETI SaaS</p>
+        <h1>Plan Estratégico de TI</h1>
+        <p class="login-copy">
+          Gestión empresarial segura para construir, revisar y exportar el PETI
+          con flujo guiado, responsables y trazabilidad.
+        </p>
+        <form id="loginForm" class="login-form">
+          <label>
+            Correo empresarial
+            <input id="emailInput" type="email" autocomplete="email" required placeholder="owner@empresa.com" />
+          </label>
+          <label>
+            Contraseña
+            <input id="passwordInput" type="password" autocomplete="current-password" required placeholder="••••••••" />
+          </label>
+          <button type="submit" class="primary-btn">Ingresar</button>
+        </form>
+        <div class="auth-switch">
+          <button id="showRegisterBtn" type="button" class="ghost-btn">Crear empresa</button>
+        </div>
+        <form id="registerForm" class="login-form hidden">
+          <h2>Crear empresa</h2>
+          <label>Nombre de empresa<input id="regCompany" required placeholder="Nombre legal o comercial" /></label>
+          <label>RUC<input id="regRuc" required inputmode="numeric" minlength="8" maxlength="11" placeholder="RUC de la empresa" /></label>
+          <label>Correo empresarial<input id="regEmail" type="email" required placeholder="admin@empresa.com" /></label>
+          <label>Nombre del administrador principal<input id="regName" required placeholder="Nombre y apellido" /></label>
+          <label>Contraseña<input id="regPassword" type="password" minlength="6" required placeholder="Mínimo 6 caracteres" /></label>
+          <label>Confirmar contraseña<input id="regPasswordConfirm" type="password" minlength="6" required placeholder="Repita la contraseña" /></label>
+          <button type="submit" class="primary-btn">Crear empresa</button>
+        </form>
+        <p class="demo-help">Demo: owner@nova.pe / demo123</p>
+      </div>
+      <aside class="login-aside">
+        <div class="metric-card">
+          <span>Flujo</span>
+          <strong>13 módulos</strong>
+          <small>Secuencial, validado y con autoguardado.</small>
+        </div>
+        <div class="metric-card">
+          <span>Control</span>
+          <strong>Roles</strong>
+          <small>Gerencia, TI, administración, consultoría y lectura.</small>
+        </div>
+        <div class="metric-card">
+          <span>Auditoría</span>
+          <strong>Historial</strong>
+          <small>Usuario, área, fecha, versión y estado.</small>
+        </div>
+      </aside>
+    </section>
+
+    <main id="appView" class="app-shell hidden">
+      <button id="menuBtn" class="mobile-menu-btn" type="button" aria-label="Abrir menú">☰</button>
+      <aside class="sidebar">
+        <div class="brand-block">
+          <span class="brand-mark">PETI</span>
+          <div>
+            <strong id="tenantName">Empresa</strong>
+            <small id="userBadge">Usuario</small>
+          </div>
+        </div>
+        <nav id="moduleNav" class="module-nav" aria-label="Flujo PETI"></nav>
+        <button id="manageUsersBtn" class="sidebar-action" type="button">Usuarios y permisos</button>
+        <button id="logoutBtn" class="sidebar-action" type="button">Cerrar sesión</button>
+      </aside>
+
+      <section class="workspace">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow" id="moduleStep">Módulo</p>
+            <h2 id="moduleTitle">Dashboard</h2>
+          </div>
+          <div class="topbar-actions">
+            <span id="autosaveStatus" class="save-state">Sin cambios</span>
+            <button id="helpBtn" class="icon-btn" type="button" title="Ayuda contextual" aria-label="Ayuda">?</button>
+            <button id="exportBtn" class="secondary-btn" type="button">Exportar</button>
+          </div>
+        </header>
+
+        <section id="dashboard" class="dashboard"></section>
+        <section id="moduleContent" class="module-content"></section>
+      </section>
+    </main>
+
+    <div id="modalBackdrop" class="modal-backdrop hidden">
+      <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <header class="modal-header">
+          <h3 id="modalTitle">Modal</h3>
+          <button id="modalClose" type="button" class="icon-btn" aria-label="Cerrar">x</button>
+        </header>
+        <div id="modalBody" class="modal-body"></div>
+        <footer id="modalFooter" class="modal-footer"></footer>
+      </section>
+    </div>
+
+    <script src="./api.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
